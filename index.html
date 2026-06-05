@@ -1,133 +1,250 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Munn 王心月 | XR交互 · 产品策划 · 用户研究 · AI Coding</title>
+    <title>王心月 Munn | AI产品 · XR交互 · 用户研究</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            max-width: 880px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
             line-height: 1.5;
             color: #1a1a1a;
+            background: #fff;
         }
-        h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-        .subtitle { color: #555; margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        /* 项目网格容器 - 两列布局 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        /* 项目卡片 */
         .project {
-            background: #f8f8f8;
-            border-radius: 12px;
+            background: #f8f8f9;
+            border-radius: 16px;
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            border-left: 4px solid #0366d6;
+            transition: box-shadow 0.2s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
+
+        .project:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .project h2 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project p {
+            margin: 0.5rem 0;
+            color: #2c3e4f;
+        }
+
+        .project strong {
+            color: #1a1a1a;
+        }
+
+        .demo-img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 12px 0;
+            border: 1px solid #e1e4e8;
+            background: #fff;
+        }
+
         .btn {
             display: inline-block;
             background: #1a1a1a;
             color: white;
-            padding: 8px 20px;
+            padding: 6px 16px;
             text-decoration: none;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-top: 12px;
+            border-radius: 24px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 8px;
+            margin-right: 8px;
+            transition: background 0.2s;
         }
-        hr { margin: 2rem 0; border: none; border-top: 1px solid #eee; }
-        a { color: #0366d6; text-decoration: none; }
-        .contact-line { margin: 0.5rem 0; }
+
+        .btn:hover {
+            background: #333;
+        }
+
+        hr {
+            margin: 2rem 0;
+            border: none;
+            border-top: 1px solid #e1e4e8;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        .contact-line {
+            margin: 0.5rem 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e1e4e8;
+        }
+
+        /* 响应式：窄屏幕变一列 */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.2rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* 按钮组换行 */
+        .btn-group {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .btn-group .btn {
+            margin-top: 0;
+            margin-right: 0;
+        }
     </style>
 </head>
 <body>
 
-    <h1>👋 Hi, this is Munn 王心月</h1>
-    <div class="subtitle"> 产品策划 · XR交互 · 用户研究 · AI Coding</div>
-        
-    <!-- 教育背景与研究方向 -->
-    <p class="contact-line">
-        🎓 <strong>教育背景：</strong> 香港理工大学 · 智能建造硕士 (一等荣誉学位) · 重庆大学 本科
-    </p>
+<h1>👋 Hi, this is Munn 王心月</h1>
+<div class="subtitle">产品策划 · XR交互 · 用户研究 · AI Coding</div>
 
-    <p class="contact-line">
-        🔬 <strong>研究方向：</strong> VR/XR 用户体验 · 眼动追踪 · 认知行为分析 | 熟悉 Unity XR 开发 · Tobii SDK · 实验设计与用户研究
-    </p>
-    
-<!-- AI coding 作品demo -->
-<div class="project">
-    <h2>🤖 用户反馈智能分类与服务策略</h2>
-    <p>基于 Python + Streamlit 搭建的 AI-Coding Demo，用于模拟 C 端服务场景下的用户反馈分类、优先级判断与服务策略输出流程。</p>
-    <p><strong>核心功能：</strong> 自动将用户反馈归类为账号问题、内容推荐、支付问题、功能故障、客服体验等类别，并生成 P0/P1/P2 优先级。</p>
-    <p><strong>指标输出：</strong> 展示总反馈量、P0问题数、问题类别数、P0占比、问题类别分布与优先级分布，辅助识别高优先级服务痛点。</p>
-      <img src="assets/user_feedback_demo.png"
-         alt="用户反馈智能分类与服务策略看板截图"
-         style="width:100%; border-radius:12px; margin-top:12px;">
-    <a href="https://feedback-ai-service-demo.streamlit.app/" class="btn" target="_blank">🔗 查看在线 Demo →</a>
-    <a href="https://github.com/xinyuemunn/feedback_ai_service_demo" class="btn" target="_blank">💻 查看代码 →</a>
-</div>
-    
-    <!-- 作品1：VR交互引导优化 -->
+<!-- 教育背景 -->
+<p class="contact-line">
+    🎓 <strong>教育背景：</strong> 香港理工大学 · 智能建造硕士 (一等荣誉学位) | 重庆大学 · 本科
+</p>
+
+<p class="contact-line" style="padding-left: 6rem; text-indent: -6rem;">
+    🔬 <strong>研究方向：</strong> VR/XR 用户体验 · 眼动追踪 · 认知行为分析 <br>
+    Unity · Tobii SDK · 实验设计与用户研究
+</p>
+
+<hr>
+
+<!-- 项目网格（两列布局） -->
+<div class="projects-grid">
+
+    <!-- 项目1：用户反馈智能分类 -->
+    <div class="project">
+        <h2>🤖 用户反馈智能分类与服务策略</h2>
+        <p>基于 Python + Streamlit 搭建的 AI-Coding Demo，用于模拟 C 端服务场景下的用户反馈分类、优先级判断与服务策略输出流程。</p>
+        <p><strong>核心功能：</strong> 自动将用户反馈归类为账号问题、内容推荐、支付问题、功能故障、客服体验等类别，并生成 P0/P1/P2 优先级。</p>
+        <p><strong>指标输出：</strong> 展示总反馈量、P0问题数、问题类别数、P0占比、问题类别分布与优先级分布，辅助识别高优先级服务痛点。</p>
+        <img src="assets/user_feedback_demo.png" alt="用户反馈智能分类看板" class="demo-img" onerror="this.style.display='none'">
+        <div class="btn-group">
+            <a href="https://feedback-ai-service-demo.streamlit.app/" class="btn" target="_blank">🔗 在线 Demo</a>
+            <a href="https://github.com/xinyuemunn/feedback_ai_service_demo" class="btn" target="_blank">💻 查看代码</a>
+        </div>
+    </div>
+
+    <!-- 项目2：VR交互引导优化 -->
     <div class="project">
         <h2>🎮 VR交互引导优化</h2>
         <p>基于眼动追踪实验，优化VR教育安全培训场景中的新手引导流程。</p>
         <p><strong>研究方法：</strong> 设计危险识别任务，采集首次注视时间(TTFF)、瞳孔直径、决策时间等指标，评估用户态势感知与认知负荷。</p>
         <p><strong>核心发现：</strong> 静态远距离危险物的感知延迟最显著（5.8s vs 平均2.5s），识别高认知负荷场景与风险转移路径。</p>
         <p><strong>设计方案：</strong> 提出视觉提示强化策略、新手引导优化与反馈机制改进方案，输出高保真交互原型。</p>
-    <img src="assets/vr_sa_demo.png"
-         alt="VR安全培训态势感知诊断看板截图"
-         style="width:100%; border-radius:12px; margin-top:12px;">
-    <a href="https://row-markup-93169278.figma.site/" class="btn" target="_blank">🔗 查看交互原型 →</a>
-    <a href="https://wxyvrsadashboarddemo.streamlit.app/" class="btn" target="_blank">🔗 查看在线 Demo →</a>
-    <a href="https://github.com/xinyuemunn/vr_sa_dashboard_demo" class="btn" target="_blank">💻 查看代码仓库 →</a>
-
-
-
-        
+        <img src="assets/vr_sa_demo.png" alt="VR态势感知看板" class="demo-img" onerror="this.style.display='none'">
+        <div class="btn-group">
+            <a href="https://row-markup-93169278.figma.site/" class="btn" target="_blank">🎨 交互原型</a>
+            <a href="https://wxyvrsadashboarddemo.streamlit.app/" class="btn" target="_blank">🔗 在线 Demo</a>
+            <a href="https://github.com/xinyuemunn/vr_sa_dashboard_demo" class="btn" target="_blank">💻 代码仓库</a>
+        </div>
     </div>
 
-    <!-- 作品2：TISM 复杂系统分析 -->
+    <!-- 项目3：肩部外骨骼可用性评估 -->
+    <div class="project">
+        <h2>🦾 肩部外骨骼可用性评估与优化</h2>
+        <p>构建面向施工场景的肩部外骨骼可用性评估框架，并使用 AI-Coding 辅助将 AHP-EW 多指标评价方法转化为 Python + Streamlit 轻量级产品决策看板。</p>
+        <p><strong>研究方法：</strong> 建立覆盖 Motion matching、Ease of use、Ergonomics、Task、Suitability 五个一级维度的体验评价体系，结合 AHP-EW 权重分析。</p>
+        <p><strong>核心发现：</strong> 识别相对位移、关节错位、外部物体缠绕风险、PPE 兼容性等关键痛点，通过“高权重 × 低得分缺口”形成优化优先级。</p>
+        <img src="assets/exoskeleton_eval_demo.png" alt="外骨骼评估看板" class="demo-img" onerror="this.style.display='none'">
+        <div class="btn-group">
+            <a href="https://fiber-finder-46441317.figma.site/" class="btn" target="_blank">🎨 原型展示</a>
+            <a href="https://wxyexoskeletonevaldemo.streamlit.app/" class="btn" target="_blank">🔗 在线 Demo</a>
+            <a href="https://github.com/xinyuemunn/exoskeleton_eval_demo" class="btn" target="_blank">💻 代码仓库</a>
+        </div>
+    </div>
+
+    <!-- 项目4：TISM 复杂系统分析 -->
     <div class="project">
         <h2>📊 TISM 复杂系统分析</h2>
         <p>基于TISM理论，分析香港MiC推广中的挑战与关键影响因素。</p>
         <p><strong>研究方法：</strong> 运用TISM构建层次结构模型，识别核心挑战与驱动因素，分析因素间的传递关系与影响路径。</p>
         <p><strong>核心发现：</strong> 定位政策协同、供应链整合、成本控制等关键瓶颈，提出分阶段推广策略建议。</p>
-        <a href="https://golf-lizard-66805610.figma.site/" class="btn" target="_blank">🔗 查看交互原型 →</a>
+        <div class="btn-group">
+            <a href="https://golf-lizard-66805610.figma.site/" class="btn" target="_blank">🎨 交互原型</a>
+        </div>
     </div>
 
-<!-- 作品3：肩部外骨骼可用性评估 + Streamlit Demo -->
-<div class="project">
-    <h2>🦾 肩部外骨骼可用性评估与优化优先级demo</h2>
-    <p> 构建面向施工场景的肩部外骨骼可用性评估框架，并使用 AI-Coding 辅助将 AHP-EW 多指标评价方法转化为 Python + Streamlit 轻量级产品决策看板。</p>
-    <p> <strong>研究方法：</strong> 建立覆盖 Motion matching、Ease of use、Ergonomics、Task、Suitability 五个一级维度的体验评价体系，结合 AHP-EW 权重分析，对外骨骼产品可用性进行量化评估。
-    </p>
-    <p><strong>核心发现：</strong>识别相对位移、关节错位、外部物体缠绕风险、PPE 兼容性等关键痛点，并通过“高权重 × 低得分缺口”形成产品优化优先级。</p>
-    <p><strong>Demo 功能：</strong>支持指标评分调整、综合体验得分计算、一级维度分析、Top 5 高权重低得分问题识别，并自动生成优化建议。</p>
-    <p> <strong>项目价值：</strong>将研究型评价框架转化为可交互的产品体验评估工具，体现用户体验指标体系建设、产品策略判断与 AI-Coding 工具化能力。 </p>
-    <img src="assets/exoskeleton_eval_demo.png"
-         alt="肩部外骨骼体验评估与优化优先级看板截图"
-         style="width:100%; border-radius:12px; margin-top:12px;">
-    <a href="https://fiber-finder-46441317.figma.site/" class="btn" target="_blank">🔗 查看原型展示 →</a>
-    <a href="https://wxyexoskeletonevaldemo.streamlit.app/" class="btn" target="_blank">🔗 查看在线 Demo →</a>
-    <a href="https://github.com/xinyuemunn/exoskeleton_eval_demo" class="btn" target="_blank">💻 查看代码仓库 →</a>
-</div>
+    <!-- 项目5：3D打印桥梁拓扑优化 -->
+    <div class="project">
+        <h2>🏗️ 3D打印桥梁拓扑优化</h2>
+        <p>基于BESO双向渐进结构优化方法，对桥梁结构进行拓扑优化，结合粒子流仿真与SLA 3D打印技术，完成从概念设计到实物落地的全流程验证。</p>
+        <p><strong>核心成果：</strong> 体积减少70% · 重量减轻60% · 确定2.5m最优桥宽 · SLA树脂打印</p>
+        <p><strong>研究方法：</strong> BESO拓扑优化 · 粒子流仿真 · 有限元负载计算 · 工艺对比选型</p>
+        <p><strong>我的贡献：</strong> 负责拓扑优化模块，使用Ameba进行迭代计算；完成不同网格密度与体积分数对比测试；参与1:100缩尺模型负载计算；输出优化模型用于3D打印。</p>
+        <div class="btn-group">
+            <a href="https://elm-rage-29614830.figma.site" class="btn" target="_blank">🔗 项目详情</a>
+        </div>
+    </div>
 
-     <!-- 3D打印桥梁拓扑优化项目 -->
-<div class="project">
-    <h2>🏗️ 3D打印桥梁拓扑优化</h2>
-    <p>基于BESO双向渐进结构优化方法，对桥梁结构进行拓扑优化，结合粒子流仿真与SLA 3D打印技术，完成从概念设计到实物落地的全流程验证。</p>
-    <p><strong>核心成果：</strong> 体积减少70% · 重量减轻60% · 确定2.5m最优桥宽 · SLA树脂打印</p>
-    <p><strong>研究方法：</strong> BESO拓扑优化 · 粒子流仿真 · 有限元负载计算 · 工艺对比选型</p>
-    <p><strong>我的贡献：</strong> 负责拓扑优化模块，使用Ameba进行迭代计算；完成不同网格密度与体积分数对比测试；参与1:100缩尺模型负载计算；输出优化模型用于3D打印。</p>
-    <!-- ↓↓↓ 请把下面 href 里的链接替换成你的真实Figma链接 ↓↓↓ -->
-    <a href="https://elm-rage-29614830.figma.site" class="btn" target="_blank">🔗 查看项目详情 →</a>
-</div>
-
-    <!-- 简历入口 -->
+    <!-- 项目6：个人简历入口 -->
     <div class="project">
         <h2>📄 个人简历</h2>
         <p>香港理工大学硕士，研究方向为XR用户体验与认知行为分析。熟悉VR实验搭建、眼动追踪、用户行为分析全流程。</p>
-        <a href="resume.pdf" class="btn" target="_blank">📄 查看完整简历 →</a>
+        <div class="btn-group">
+            <a href="resume.pdf" class="btn" target="_blank">📄 查看完整简历</a>
+        </div>
     </div>
 
-    <hr>
+</div>
 
+<hr>
 
 <p class="contact-line">
     📧 <strong>联系我：</strong> 
@@ -135,11 +252,11 @@
     <a href="mailto:yuet1997@gmail.com">yuet1997@gmail.com</a>
 </p>
 
+<!-- 页脚 -->
+<div class="footer-note">
+    🛠️ <strong>作品集构建：</strong> HTML/CSS 手写 + Cursor 辅助编码 | 各 Demo 基于 Python/Streamlit 部署<br>
+    📅 <strong>更新时间：</strong> 2026.06
+</div>
 
-<!-- ========== 页脚 ========== -->
-    <div class="footer-note">
-        🛠️ APP 构建：HTML/CSS 手写 + Cursor 辅助编码 | 各 Demo 基于 Python/Streamlit 部署<br>
-        📅 更新时间：2026年6月
-    </div>    
 </body>
 </html>
